@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-grunt-favicons",     "homepage": "https://github.com/npmtest/node-npmtest-grunt-favicons",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-grunt-favicons.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [grunt-favicons (v0.8.0)](https://github.com/gleero/grunt-favicons)  [![npm package](https://img.shields.io/npm/v/npmtest-grunt-favicons.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-grunt-favicons) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-grunt-favicons.svg)](https://travis-ci.org/npmtest/node-npmtest-grunt-favicons)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-grunt-favicons",
+    "keywords": [
+        "coverage",
+        "test",
+        "grunt-favicons"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_grunt_favicons.js",
+    "name": "npmtest-grunt-favicons",
+    "nameAlias": "npmtest_grunt_favicons",
+    "nameOriginal": "npmtest-grunt-favicons",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-grunt-favicons.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
